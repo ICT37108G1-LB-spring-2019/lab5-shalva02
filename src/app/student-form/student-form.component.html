@@ -1,0 +1,35 @@
+<form [formGroup]="studentForm" (ngSubmit)="submitForm(studentForm)">
+  <div class="form-group">
+    <label>First Name</label>
+    <input
+      type="text"
+      class="form-control"
+      [formControl]="studentForm.controls['firstName']"
+    />
+  </div>
+  <div class="form-group">
+    <label>Last Name</label>
+    <input
+      type="text"
+      class="form-control"
+      [formControl]="studentForm.controls['lastName']"
+    />
+  </div>
+  <div class="form-group">
+    <label>Pernson No</label>
+    <input
+      type="number"
+      class="form-control"
+      [formControl]="studentForm.controls['perNO']"
+    />
+  </div>
+  <button class="btn btn-success">Submit</button>
+  <button
+    class="btn btn-info"
+    *ngIf="useClear"
+    (click)="clear()"
+    [disabled]="!studentForm.dirty"
+  >
+    Clear
+  </button>
+</form>
